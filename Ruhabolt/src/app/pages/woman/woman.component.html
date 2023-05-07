@@ -1,0 +1,12 @@
+<div class="component-container">
+    <mat-card *ngFor="let woman of womanList" class="transparent">
+        <img mat-card-image src={{woman.image}}>
+        <mat-card-title>{{woman.name}}</mat-card-title>
+        <mat-card-subtitle>Méret: {{woman.size}}</mat-card-subtitle>
+        <mat-card-subtitle>Ár: {{woman.price }} Ft</mat-card-subtitle>
+        <div>Szín: {{woman.color}}</div>
+        <mat-card-actions align="start" *ngIf="user">
+            <button mat-raised-button color="primary" (click)="addToCart(woman)" (click)="openSnackBar()">Kosárba</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

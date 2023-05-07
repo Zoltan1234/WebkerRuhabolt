@@ -1,0 +1,11 @@
+<div class="component-container">
+    <mat-card *ngIf="cartStorage.length <1" class="transparent">
+        <mat-card-title align="center">Üres a kosár</mat-card-title>
+    </mat-card>
+    <mat-card *ngFor="let item of cartStorage; let i = index" class="transparent">
+        <mat-card-title align="start">{{item.name}}</mat-card-title>
+        <mat-card-subtitle align="start">{{item.size}} - {{numToHuf.transform(item.price)}}</mat-card-subtitle>
+        <mat-icon id="cancel" (click)="cancel(i)">cancel</mat-icon>
+    </mat-card>
+    <button  *ngIf="cartStorage.length > 0" mat-raised-button color="primary" (click)="order()">Megrendel</button>
+</div>

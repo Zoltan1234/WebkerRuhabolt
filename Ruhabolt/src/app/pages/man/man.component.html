@@ -1,0 +1,12 @@
+<div class="component-container">
+    <mat-card *ngFor="let man of manList" class="transparent">
+        <img mat-card-image src={{man.image}}>
+        <mat-card-title>{{man.name}}</mat-card-title>
+        <mat-card-subtitle>Méret: {{man.size}}</mat-card-subtitle>
+        <mat-card-subtitle>Ár: {{man.price }} Ft</mat-card-subtitle>
+        <div>Szín: {{man.color}}</div>
+        <mat-card-actions align="start" *ngIf="user">
+            <button mat-raised-button color="primary" (click)="addToCart(man)" (click)="openSnackBar()">Kosárba</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

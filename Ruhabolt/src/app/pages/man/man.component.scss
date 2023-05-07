@@ -1,0 +1,40 @@
+mat-card {
+    min-width: 20%;
+    max-width: 20%;
+
+    mat-card-subtitle {
+        color: black;
+    }
+}
+.component-container {
+    font-size: 24px; /* Ez a szöveg és a gombok mérete is */
+}
+button {
+    padding: 12px 24px; /* Az első érték a felső és alsó padding, a második az oldalsó padding */
+    font-size: 24px;
+}
+mat-card-subtitle{
+    font-size: 24px;
+}  
+mat-card-title{
+    font-size: 30px;
+    padding-bottom: 15px;
+}
+@media screen and (max-width: 1200px) {
+    mat-card {
+        min-width: 30%;
+
+    }
+}
+@media screen and (max-width: 950px) {
+    mat-card {
+        min-width: 45%;
+
+    }
+}
+@media screen and (max-width: 950px) {
+    mat-card {
+        min-width: 65%;
+
+    }
+}

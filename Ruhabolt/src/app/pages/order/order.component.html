@@ -1,0 +1,20 @@
+<div>
+    <mat-card *ngIf="orderList.length < 1 " class="transparent">
+        <mat-card-title align="center">Nincsenek rendeléseid</mat-card-title>
+    </mat-card>
+    <mat-accordion *ngFor="let order of orderList; let i = index">
+        <mat-expansion-panel expanded="true">
+            <mat-expansion-panel-header>
+                <mat-panel-title>Rendelés-{{i+1}}</mat-panel-title>
+                <mat-panel-description>{{order.date.toLocaleString()}} </mat-panel-description>
+                <button mat-button (click)="delete(order.id)">Töröl</button>
+            </mat-expansion-panel-header>
+            <mat-list>
+                <mat-list-item *ngFor="let item of order.items">
+                    {{item.name}} - {{item.size}} - {{numToHuf.transform(item.price)}}
+                </mat-list-item>
+            </mat-list>
+    
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

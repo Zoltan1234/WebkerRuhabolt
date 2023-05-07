@@ -1,0 +1,34 @@
+<mat-spinner *ngIf="loading"></mat-spinner>
+<mat-card *ngIf="!loading" class="transparent">
+    <form fxFlex fxLayout="column" [formGroup]="registrationForm" >
+        <mat-card-title>Regisztráció</mat-card-title>
+        <mat-form-field>
+            <input type="email" formControlName="email" matInput placeholder="Email" >
+            <mat-error *ngIf="registrationForm.get('email')?.invalid">Email is invalid.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input type="password" formControlName="password" matInput placeholder="Password">
+            <mat-error *ngIf="registrationForm.get('password')?.invalid">Password is invalid.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input type="password" [formControl]="passwordAgain" matInput placeholder="Password again">
+            <mat-error *ngIf="registrationForm.get('password')?.value!=passwordAgain.value || registrationForm.get('password')?.invalid">Password do not match</mat-error>
+        </mat-form-field> 
+        <mat-form-field>
+            <input type="text" formControlName="firstName" matInput placeholder="First name">
+            <mat-error *ngIf="registrationForm.get('firstName')?.invalid">First name is invalid.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input type="text" formControlName="lastName" matInput placeholder="Last name">
+            <mat-error *ngIf="registrationForm.get('lastName')?.invalid">Last name is invalid.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input type="date" formControlName="birthDate" matInput placeholder="Birth date">
+            <mat-error *ngIf="registrationForm.get('birthDate')?.invalid">Birth date is invalid.</mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="registration()">Regisztráció</button>
+        <button mat-raised-button color="primary" [routerLink]="'/login'">Belépés</button>
+        <span class="error-message">{{err}}</span>
+    </form>
+   
+</mat-card>

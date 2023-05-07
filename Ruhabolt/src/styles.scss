@@ -1,0 +1,76 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+
+}
+
+html,
+body {
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.2s;
+}
+a:hover,
+a:active {
+    color: lightgray;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+.component-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+
+
+mat-mat-error {
+    margin: 0;
+}
+
+mat-form-field {
+    min-width: 20vw;
+}
+
+mat-card {
+    margin: 10px;
+    padding: 20px;
+    color: black;
+    background-position: center;
+    text-align: center;
+
+    mat-card-subtitle {
+        color: black;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    mat-card {
+        max-width: 100%;
+        margin: 2% 5%;
+    }
+}
+

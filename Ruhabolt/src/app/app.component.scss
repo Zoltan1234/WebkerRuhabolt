@@ -1,0 +1,39 @@
+
+
+.navigation-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+    li {
+        margin: 0 15px;
+    }
+}
+
+mat-sidenav {
+    width: 200px;
+    text-transform: capitalize;
+    position: fixed;
+}
+
+.sidenav-title {
+    margin-left: 10px;
+}
+
+mat-toolbar {
+    position: fixed !important;
+    height: min-content !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index: 100;
+}
+
+#container{
+    padding: 50px 0;
+    z-index: 0;
+    background-image: url("https://cdn1.photostockeditor.com/c/1301/black-and-white-greyscale-photography-of-woman-standing-outside-store-human-human-image.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+

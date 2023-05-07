@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "clothshop-3d0e7": {
+      "hosting": {
+        "webshop": [
+          "clothshop-3d0e7"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "clothshop-3d0e7"
+  }
+}

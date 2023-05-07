@@ -1,0 +1,20 @@
+<mat-spinner *ngIf="loading"></mat-spinner>
+
+<mat-card *ngIf="!loading" fxFlex fxLayout="column" class="transparent"> 
+    <mat-card-title>Bejelentkezés</mat-card-title>
+    <mat-form-field>
+        <input type="email" [formControl]="email" matInput placeholder="Email">
+        <mat-error *ngIf="email.invalid">
+            Email is invalid.
+        </mat-error>            
+    </mat-form-field>
+    <mat-form-field>
+        <input type="password" [formControl]="password"  matInput placeholder="Password">
+        <mat-error *ngIf="email.invalid">
+            Password is invalid.
+        </mat-error>   
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="login()">Belépés</button>
+    <button mat-raised-button color="primary" [routerLink]="'/registration'">Regisztráció</button>
+    <mat-error >{{err}}</mat-error>
+</mat-card>

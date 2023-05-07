@@ -1,0 +1,34 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav>
+        <app-menu (onCloseSidenav)="onClose($event, sidenav)" (onClickLogout)="logout()"></app-menu>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary" class="md-medium-tall">
+            <div fxHide.gt-xs>
+                <button mat-icon-button (click)="onToggleSidenav(sidenav)">
+                    <mat-icon>menu</mat-icon>
+                </button>
+            </div> 
+            <h1 class="sidenav-title">Ruhabolt</h1>
+            <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+                <ul fxLayout fxLayoutGap="10px" class="navigation-items">
+                    <li *ngIf="!loggedInUser"><a  routerLink="/login">Belépés</a></li>
+                    <li><a routerLink="/main">Home</a></li>
+                    <li><a routerLink="/woman">Női</a></li>
+                    <li><a routerLink="/man">Férfi</a></li>
+                    <li *ngIf="loggedInUser"><a  routerLink="/order">Rendelések</a></li>
+                    <li *ngIf="loggedInUser"><a  routerLink="/cart">
+                        <mat-icon>shopping_cart</mat-icon>
+                    </a></li>
+                    <li *ngIf="loggedInUser"><a  routerLink="/main">
+                        <mat-icon (click)="logout()">logout</mat-icon>
+                    </a></li>
+                </ul>
+            </div>
+        </mat-toolbar>
+        <div id="container" class="container">
+            <router-outlet></router-outlet>
+        </div>
+
+    </mat-sidenav-content>
+</mat-sidenav-container>

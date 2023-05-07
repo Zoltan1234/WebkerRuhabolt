@@ -1,0 +1,24 @@
+
+<mat-nav-list >
+    <a *ngIf="user == null" href="" mat-list-item routerLink="/login" (click)="close()">
+        <span>Belépés</span>
+    </a>
+    <a href="" mat-list-item routerLink="/main" (click)="close()">
+        <span>Főoldal</span>
+    </a>
+    <a href="" mat-list-item routerLink="/woman" (click)="close()">
+        <span>Női</span>
+    </a>
+    <a href="" mat-list-item routerLink="/man" (click)="close()">
+        <span>Férfi</span>
+    </a>
+    <a *ngIf="user !== null" href="" mat-list-item routerLink="/cart" (click)="close()">
+        <span>Kosár</span>
+    </a>
+    <a *ngIf="user !== null" href="" mat-list-item routerLink="/order" (click)="close()">
+        <span>Rendelések</span>
+    </a>
+    <a *ngIf="user !== null" href="" mat-list-item routerLink="/main" (click)="close()" (click)="logout()">
+        <span>Kilépés</span>
+    </a>
+</mat-nav-list>
